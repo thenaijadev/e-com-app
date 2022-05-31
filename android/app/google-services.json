@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "216452483556",
+    "project_id": "mj-cuisine",
+    "storage_bucket": "mj-cuisine.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216452483556:android:de43bf3b8bea6547425ff1",
+        "android_client_info": {
+          "package_name": "com.example.shp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216452483556-4rvklhian5935l3m4etjoc488kdrm2ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXQsAwTwXnkGzqqp415VrchEFu35gcB70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216452483556-4rvklhian5935l3m4etjoc488kdrm2ao.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "216452483556-0bdusnl5mgmfisvggrec0sr930m97868.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shp2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

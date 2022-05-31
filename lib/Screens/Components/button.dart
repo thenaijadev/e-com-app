@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  const Button({Key? key, this.buttonText, this.color, this.padding})
+  const Button(
+      {Key? key, this.buttonText, this.color, this.padding, this.onpressed})
       : super(key: key);
   final String? buttonText;
   final Color? color;
   final double? padding;
+  final void Function()? onpressed;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +15,7 @@ class Button extends StatelessWidget {
       padding:
           EdgeInsets.symmetric(vertical: padding ?? 20.0, horizontal: 30.0),
       child: InkWell(
-        onTap: () {
-          Navigator.pushNamed(context, "/home");
-        },
+        onTap: onpressed,
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
           elevation: 5,
