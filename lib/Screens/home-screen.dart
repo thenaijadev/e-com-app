@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:shp2/Screens/Components/listView.dart';
 import 'Components/cart-tile.dart';
+import "package:firebase_auth/firebase_auth.dart";
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void dispose() async {
+    // TODO: implement dispose
+    super.dispose();
+    await FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {

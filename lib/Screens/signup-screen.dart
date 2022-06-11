@@ -46,7 +46,7 @@ class _SignUpScreenState extends State<SignUpScreen>
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.0),
-            child: Text('Login to your account',
+            child: Text('Create an account.',
                 style: TextStyle(
                   fontFamily: "Roboto",
                   fontSize: 20.0,

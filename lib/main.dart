@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shp2/Screens/cart-screen.dart';
 import 'package:shp2/Screens/repair-screen.dart';
-import 'package:shp2/Screens/welcome-screen.dart';
 import 'Screens/login-screen.dart';
 import 'Screens/signup-screen.dart';
 import 'Screens/repair-screen.dart';
@@ -10,6 +9,7 @@ import 'Screens/home-screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'utilities/form-validity.dart';
+import 'Screens/onboarding-screen.dart';
 
 //The code below initializes firebase.
 void main() async {
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         initialRoute: "/",
         routes: {
           // When navigating to the "/" route, build the FirstScreen widget.
-          '/': (context) => const WelcomePage(),
+          '/': (context) => const OnboardingScreen(),
           "/repair": (context) => const RepairScreen(),
           '/home': (context) => const HomeScreen(),
           '/login': (context) => const LoginScreen(),

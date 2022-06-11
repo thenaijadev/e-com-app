@@ -53,12 +53,13 @@ class _InputState extends State<Input> {
                       const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
-                    borderSide: const BorderSide(color: Colors.white
-                        // // color: Provider.of<ValidityData>(context).isValid
-                        // //     ? Colors.white
-                        //     : Colors.red,
-                        // width: 2),
-                        ),
+                    borderSide: const BorderSide(
+                      color: Colors.white,
+                      // color: Provider.of<ValidityData>(context).isValid
+                      //     ? Colors.white
+                      //     : Colors.red,
+                      // width: 2),
+                    ),
                   ),
                 ),
               ),

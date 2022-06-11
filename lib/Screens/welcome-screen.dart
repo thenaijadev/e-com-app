@@ -37,7 +37,7 @@ class _WelcomePageState extends State<WelcomePage>
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/iPhone 11 Pro Max - 1.jpg'),
+            image: AssetImage('images/"images/shop-woman.jpg"'),
             fit: BoxFit.cover,
           ),
         ),
