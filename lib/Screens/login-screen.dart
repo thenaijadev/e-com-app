@@ -25,6 +25,12 @@ class _LoginScreenState extends State<LoginScreen>
   void initState() {
     super.initState();
 
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller!.forward();
+    controller!.addListener(() {
+      setState(() {});
+    });
     isBiometricAvialble();
   }
 
@@ -81,7 +87,6 @@ class _LoginScreenState extends State<LoginScreen>
     setState(() {
       _isSaving = false;
     });
-
     email = "";
     password = "";
   }
@@ -133,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen>
                 style: const TextStyle(
                     fontSize: 20.0, color: Color.fromARGB(255, 245, 16, 0)),
               )),
-              height: 20.0,
+              height: 30.0,
             ),
             Padding(
               padding: const EdgeInsets.all(0),
@@ -158,14 +163,13 @@ class _LoginScreenState extends State<LoginScreen>
               )),
               height: Provider.of<ValidityData>(context, listen: false)
                       .isWrongPassword
-                  ? 20
+                  ? 30
                   : 0,
             ),
             Button(
               onpressed: () async {
                 setState(() async {
                   _isSaving = true;
-
                   await login();
                 });
               },
