@@ -74,10 +74,13 @@ class _SignUpScreenState extends State<SignUpScreen>
       } catch (e) {
         print(e);
       }
-      setState(() {
-        _isSaving = false;
-      });
     }
+    setState(() {
+      _isSaving = false;
+    });
+    email = "";
+    password = "";
+    confirmPassword = "";
   }
 
   @override
@@ -87,8 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen>
           .withOpacity(controller!.value),
       body: ModalProgressHUD(
         inAsyncCall: _isSaving,
-        progressIndicator:
-            const CircularProgressIndicator(backgroundColor: Colors.red),
+        progressIndicator: const CircularProgressIndicator(),
         child: ListView(
           children: [
             const Image(

@@ -21,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen>
   bool showBiometrics = false;
   bool isAuthenticated = false;
   bool biometricsAvialable = false;
+  bool isUserNotFound = false;
   @override
   void initState() {
     super.initState();
@@ -64,6 +65,9 @@ class _LoginScreenState extends State<LoginScreen>
 
           if (isAuthenticated) {
             Navigator.pushNamed(context, "/home");
+            setState(() {
+              isUserNotFound = false;
+            });
           }
         } else {
           Navigator.pushNamed(context, "/home");
@@ -71,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen>
       } on FirebaseAuthException catch (e) {
         if (e.code == 'user-not-found') {
           setState(() {
-            Provider.of<ValidityData>(context, listen: false).userNotFound();
+            isUserNotFound = true;
           });
           print('No user found for that email.');
         } else if (e.code == 'wrong-password') {
@@ -132,9 +136,7 @@ class _LoginScreenState extends State<LoginScreen>
             SizedBox(
               child: Center(
                   child: Text(
-                Provider.of<ValidityData>(context, listen: false).isUserNotFound
-                    ? "No user found for that email."
-                    : "",
+                isUserNotFound ? "No user found for that email." : "",
                 style: const TextStyle(
                     fontSize: 20.0, color: Color.fromARGB(255, 245, 16, 0)),
               )),
